@@ -10,3 +10,5 @@ Currently, two official plugins are available:
 Name -abinash sahoo
 class =12
 jjjj
+sec -z
+regd.no-2141019438
