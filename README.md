@@ -1,1 +1,1 @@
-Cart items align hauni🥲
+Frontend kama sarila 🥱
