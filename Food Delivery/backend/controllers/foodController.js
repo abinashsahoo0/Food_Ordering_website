@@ -1,10 +1,11 @@
 
-import { log } from "console";
+//import { log } from "console";
 import foodModel from "../models/foodModel.js";
 import fs from "fs"
 
 
 const addFood = async (req, res) => {
+   try{
    let image_filename = `${req.file.filename}`;
 
 
@@ -16,7 +17,7 @@ const addFood = async (req, res) => {
       image: image_filename
    })
 
-   try {
+   
       await food.save();
       res.json({ success: true, message: "Food Added" })
 
@@ -29,8 +30,8 @@ const addFood = async (req, res) => {
 //all food list
 const listFood = async (req, res) => {
    try {
-      const food = await foodModel.find({});
-      res.json({ success: true, data: food })
+      const foods = await foodModel.find({});
+      res.json({ success: true, data: foods })
 
    } catch (error) {
       console.log(error);
@@ -42,13 +43,13 @@ const listFood = async (req, res) => {
 const removeFood = async (req, res) => {
    try {
       const food = await foodModel.findById(req.body.id)
-      fs.unlink("`uploads/${food.image}`", () => { })
-      await foodModel.findByIdAndDelete(req.body.delete)
-      res.json({ success: true, message: "Deleted Successfully" })
+      fs.unlink(`uploads/${food.image}`, () => { })
+      await foodModel.findByIdAndDelete(req.body.id)
+      res.json({ success: true, message: "Food Removed" })
 
    } catch (error) {
       console.log(error);
-      res.json({ success: false, message: "Not Deleted" })
+      res.json({ success: false, message: "Error" })
    }
 
 }
