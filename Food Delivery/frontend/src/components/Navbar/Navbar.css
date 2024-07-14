@@ -57,7 +57,7 @@
     position: absolute;
     min-width: 10px;
     min-height: 10px;
-    background-color: tomato;
+    background-color: #cb6ce6;
     border-radius: 5px;
     top: -8px;
     right: -8px;
@@ -81,7 +81,7 @@
     background-color: #fff2ef;
     padding: 12px 25px;
     border-radius: 4px;
-    border: 1px solid tomato;
+    border: 1px solid #cb6ce6;
     outline: 1px solid white;
     list-style: none;
 }
@@ -98,7 +98,7 @@
 }
 
 .nav-profile-dropdown li:hover{
-    color: tomato;
+    color: #cb6ce6;
 }
 
 @media(max-width:1050px){
